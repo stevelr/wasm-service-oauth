@@ -1,0 +1,9 @@
+Cargo.lock
+.cargo*
+/target
+pkg/
+wasm-pack.log
+worker/generated/
+env
+.idea
+

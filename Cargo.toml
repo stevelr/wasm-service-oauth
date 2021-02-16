@@ -1,0 +1,31 @@
+[package]
+name = "wasm-service-oauth"
+version = "0.2.0"
+authors = ["stevelr <git@somecool.net>"]
+edition = "2018"
+description = "OAuth2 plugin for wasm-service"
+repository = "https://github.com/stevelr/wasm-service-oauth"
+license = "MIT OR Apache 2.0"
+homepage = "https://github.com/stevelr/wasm-service-oauth"
+
+#[lib]
+#crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+aes-gcm = { version="0.8" }
+async-trait = "0.1"
+base64 = { version="0.13", default-features=false }
+bytes = "1.0"
+cfg-if = "1.0"
+getrandom = { version="0.2", features=["js"] }
+js-sys = "0.3"
+reqwest = { version="0.11", features=["json"] }
+serde_json = {version = "1.0", default-features = false, features = ["alloc"]}
+serde = { version="1.0", default-features=false, features=["alloc","derive"]}
+service-logging = { version="0.4", path="../service-logging", features=["alloc"] }
+thiserror = "1.0"
+wasm-service = { version="0.5", path="../wasm-service", features=["alloc"] }
+
+[dev-dependencies]
+wasm-bindgen-test = "0.3"
+
